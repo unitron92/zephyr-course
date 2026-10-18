@@ -41,14 +41,23 @@ menu "Expert settings"
 
 config APP_LED_DEBUG
     bool "Enable LED debugging"
+    default n
 
 config APP_LED_CUSTOM_PATTERN
     bool "Custom blink pattern"
+    default n
 
 endmenu
 
 endif
 
 endif
+
+config APP_HEARTBEAT_PERIOD_MS
+    int "Heartbeat LED sleep time (ms)"
+    default 500
+    range 100 2000
+    help
+      Delay between LED toggles in milliseconds.
 
 source "Kconfig.zephyr"

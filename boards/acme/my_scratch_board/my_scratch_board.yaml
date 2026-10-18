@@ -1,0 +1,12 @@
+identifier: my_scratch_board
+name: My Scratch Board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 96
+flash: 512
+supported:
+  - gpio
+  - uart

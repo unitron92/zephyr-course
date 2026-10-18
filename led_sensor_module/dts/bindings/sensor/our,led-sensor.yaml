@@ -1,0 +1,10 @@
+description: Simple on-board LED exposed through the sensor API
+
+compatible: "our,led-sensor"
+
+include: base.yaml
+
+properties:
+  led-gpios:
+    type: phandle-array
+    required: true

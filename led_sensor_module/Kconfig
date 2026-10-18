@@ -1,0 +1,6 @@
+config LED_SENSOR
+	bool "On-board LED exposed as a sensor"
+	default y
+	depends on DT_HAS_OUR_LED_SENSOR_ENABLED
+	depends on SENSOR
+	select GPIO

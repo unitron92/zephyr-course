@@ -1,0 +1,11 @@
+&gpioa {
+status = "okay";
+};
+
+/ {
+led_sensor0: led_sensor {
+compatible = "our,led-sensor";
+led-gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+status = "okay";
+};
+};

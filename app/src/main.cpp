@@ -2,7 +2,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
-#define SLEEP_TIME_MS CONFIG_APP_HEARTBEAT_PERIOD_MS
+#define SLEEP_TIME_MS CONFIG_APP_LED_SLEEP_TIME_MS
 
 /* The devicetree node identifier for the "led0" alias. */
 #define LED_NODE DT_ALIAS(app_led)

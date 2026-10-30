@@ -21,6 +21,12 @@ config APP_LED_SLEEP_SLOW
 
 endchoice
 
+config APP_LED_SLEEP_TIME_MS
+    int
+    default 500 if APP_LED_SLEEP_FAST
+    default 1000 if APP_LED_SLEEP_MEDIUM
+    default 2000 if APP_LED_SLEEP_SLOW
+
 menuconfig APP_LED_ADVANCED
     bool "Advanced LED settings"
     default n
@@ -34,30 +40,21 @@ config APP_LED_BRIGHTNESS
 
 config APP_LED_FADE_DURATION
     int "LED fade duration (ms)"
-    range 0 10000
+    range 0 5000
     default 500
 
 menu "Expert settings"
 
 config APP_LED_DEBUG
     bool "Enable LED debugging"
-    default n
 
 config APP_LED_CUSTOM_PATTERN
     bool "Custom blink pattern"
-    default n
 
 endmenu
 
 endif
 
 endif
-
-config APP_HEARTBEAT_PERIOD_MS
-    int "Heartbeat LED sleep time (ms)"
-    default 500
-    range 100 2000
-    help
-      Delay between LED toggles in milliseconds.
 
 source "Kconfig.zephyr"
